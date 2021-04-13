@@ -10,3 +10,9 @@ verze 0.1
 
 verze 0.2
 - pridano startapp s nazvem Army_app
+
+verze 0.3
+- vytvořené modely:
+- model Solider - informace o vojákovi
+- model Gun - informace o zbrani
+- model Platoon - informace o Skupině/Praporu vojáků
