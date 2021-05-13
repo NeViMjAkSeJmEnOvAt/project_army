@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row mt-3 mb-3 bg-warning p-3">
+    <div class="col-sm-12">
+        <h2 class="text-center">Vojáci</h2>
+    </div>
+</div>
+<div class="row">
+    {% for vojak in vojaci%}
+    <div class="col-sm-4">
+        <div class="card">
+            {% if vojak.poster %}
+            <img class="card-img-top" src="{{ vojak.poster.url }}" alt="{{ vojak.name }}">
+            {% endif %}
+            <div class="card-body">
+                <h4 class="card-title">{{ vojak.name }}</h4>
+                <p class="card-text"><strong>Věk:</strong> {{ vojak.age }}</p>
+                <p class="card-text"><strong>Hodnost:</strong> {{ vojak.rank }}</p>
+                <p>Zbraň: {{ vojak.weapon }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <strong>Počet vojáků:</strong> {{ pocet_vojaku }}
+    </div>
+    <div class="col-sm-12">
+        <strong>Počet aktivních vojáků:</strong> {{ pocet_vojaku }}
+    </div>
+</div>
+{% endblock %}
