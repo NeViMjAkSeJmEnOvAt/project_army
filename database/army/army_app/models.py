@@ -6,6 +6,7 @@ class Solider(models.Model):
     age = models.IntegerField(help_text="Zadej vek vojaka", null=False)
     rank = models.CharField(max_length=50, help_text="Zadej hodnost vojaka.", null=False)
     weapon = models.ForeignKey('Gun', on_delete=models.SET_NULL, null=True)
+    aktivita = models.BooleanField(help_text="Je vojak prave aktivni?", null=False)
 
     class Meta:
         ordering = ["name"]
@@ -27,7 +28,9 @@ class Gun(models.Model):
 
 class Platoon(models.Model):
     name = models.CharField(max_length=50, help_text="Zadej jmeno skupiny.", null=False)
-    leader = models.CharField(max_length=50, help_text="Zadej jmeno velitele skupiny.", null=False)
+    leader = models.ForeignKey('Solider', on_delete=models.SET('Neurceno'), null=False)
+    country = models.CharField(max_length=255, help_text="Zadejte misto nasazeni skupiny.", null=True)
+
 
     class Meta:
         ordering = ["name"]

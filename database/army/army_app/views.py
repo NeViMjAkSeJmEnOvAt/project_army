@@ -13,3 +13,14 @@ def index(request):
     }
     return render(request, 'index.html', context=context)
 
+def kivy(request):
+
+    pocet_vojaku = Solider.objects.all().count()
+    vojaci = Solider
+
+    context = {
+        'pocet vojaku': pocet_vojaku,
+        'vojak': vojaci
+    }
+    return render(request, 'kivy.html', context=context)
+
