@@ -31,3 +31,9 @@ verze 0.6
 - opraveno: výpis databáze
 - přidáno: stránka s prapory a zbraněmi
 - funguje počet + počet aktivích vojáků
+
+verze 0.7 
+- databáze funguje
+- přidáno více objektů do databáze
+- zprovoznění stránek o zbraních a praporech
+- obrázky ještě nefungují, ale jsou přidánys
