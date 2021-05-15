@@ -16,3 +16,13 @@ verze 0.3
 - model Solider - informace o vojákovi
 - model Gun - informace o zbrani
 - model Platoon - informace o Skupině/Praporu vojáků
+
+verze 0.4
+- přidány pohledy
+- zprovoznění djanga
+- funguje index a base
+
+verze 0.5
+- nefunguje /admin
+- přidání kivy.html
+- upravení modelu
