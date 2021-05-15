@@ -26,3 +26,8 @@ verze 0.5
 - nefunguje /admin
 - přidání kivy.html
 - upravení modelu
+
+verze 0.6
+- opraveno: výpis databáze
+- přidáno: stránka s prapory a zbraněmi
+- funguje počet + počet aktivích vojáků

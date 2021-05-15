@@ -17,23 +17,23 @@ def index(request):
 
 def guns(request):
 
-    pocet_vojaku = Solider.objects.all().count()
-    vojaci = Solider
+    zbrane = Gun.objects.order_by('-name')
+    zbrane_pocet = Gun.objects.all().count()
 
     context = {
-        'pocet vojaku': pocet_vojaku,
-        'vojak': vojaci
+        'zbrane_pocet': zbrane_pocet,
+        'zbrane': zbrane
     }
     return render(request, 'guns.html', context=context)
 
 def platoons(request):
 
-    pocet_vojaku = Solider.objects.all().count()
-    vojaci = Solider
+    pocet_praporu = Platoon.objects.all().count()
+    prapory = Platoon.objects.order_by('-name')
 
     context = {
-        'pocet vojaku': pocet_vojaku,
-        'vojak': vojaci
+        'pocet_praporu': pocet_praporu,
+        'prapory': prapory
     }
     return render(request, 'platoons.html', context=context)
 

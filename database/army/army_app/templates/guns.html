@@ -7,14 +7,14 @@
     </div>
 </div>
 <div class="row  mb-3">
-    {% for vojak in vojaci%}
-    <div class="col-sm-3">
+    {% for zbran in zbrane%}
+    <div class="col-sm-4     mb-2" >
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">{{ vojak.name }}</h4>
-                <p class="card-text"><strong>Věk:</strong> {{ vojak.age }}</p>
-                <p class="card-text"><strong>Hodnost:</strong> {{ vojak.rank }}</p>
-                <p class="card-text"><strong>Zbraň:</strong> {{ vojak.weapon }}</p>
+                <h4 class="card-title">{{ zbran.name }}</h4>
+                <p class="card-text"><strong>Pocet Naboju:</strong> {{ zbran.ammo }} mm</p>
+                <p class="card-text"><strong>Typ naboje:</strong> {{ zbran.ammo_type }}</p>
+                <p class="card-text" onload="vlajka_chooser(1)"><img id="image_gun" src="#" alt="unknown"></p>
             </div>
         </div>
     </div>
@@ -22,10 +22,17 @@
 </div>
 <div class="row">
     <div class="col-sm-10 ">
-        <strong>Počet vojáků:</strong> <h class="text-primary">{{ pocet_vojaku }}</h>
-    </div>
-    <div class="col-sm-12">
-        <strong>Počet aktivních vojáků:</strong> <h class="text-success">{{ pocet_aktivnich }}</h>
+        <strong>Počet používaných zbraní:</strong> {{ zbrane_pocet }}
     </div>
 </div>
+
+<script>
+    function vlajka_chooser(i){
+        if (i=1){
+            document.getElementById('image_gun').src = "../images/ak47.jpg";
+            document.getElementById('image_gun').alt = "ak55";
+        }
+    }
+
+</script>
 {% endblock %}
