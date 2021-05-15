@@ -4,5 +4,6 @@ from .views import *
 
 urlpatterns = [
     path('', index, name='index'),
-    path('kivy', kivy, name='kivy')
+    path('guns', guns, name='guns'),
+    path('platoons', platoons, name='platoons'),
 ]

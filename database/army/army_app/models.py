@@ -4,9 +4,9 @@ from django.db import models
 class Solider(models.Model):
     name = models.CharField(max_length=50, help_text="Zadej jmeno vojaka.", null=False)
     age = models.IntegerField(help_text="Zadej vek vojaka", null=False)
-    rank = models.CharField(max_length=50, help_text="Zadej hodnost vojaka.", null=False)
+    rank = models.CharField(max_length=50, help_text="Zadej hodnost vojaka.", null=False, default='privateD')
     weapon = models.ForeignKey('Gun', on_delete=models.SET_NULL, null=True)
-    aktivita = models.BooleanField(help_text="Je vojak prave aktivni?", null=False)
+    activity = models.BooleanField(help_text="Je vojak prave aktivni?", null=False, default='True')
 
     class Meta:
         ordering = ["name"]

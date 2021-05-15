@@ -20,11 +20,14 @@
 
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
-          <li class="nav-item" onclick="fcePrehled">
-            <a class="nav-link" id="prehled" href="{% url 'index' %}">Přehled vojáků</a>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">Databáze Vojáků</a>
           </li>
-          <li class="nav-item" onclick="fceUprava">
-            <a class="nav-link" id="uprava" href="{% url 'kivy' %}">Upravení databáze</a>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'guns' %}">Zobrazení Zbraní</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'platoons' %}">Přehled Praporů</a>
           </li>
         </ul>
       </div>
