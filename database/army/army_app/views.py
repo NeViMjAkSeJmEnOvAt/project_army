@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Solider, Gun, Platoon
+from .models import Solider, Gun, Platoon, Ranks
 
 
 def index(request):
@@ -42,5 +42,14 @@ def platoons(request):
         'prapory': prapory
     }
     return render(request, 'platoons.html', context=context)
+
+def ranks(request):
+
+    hodnosti = Ranks.objects.order_by('score')
+
+    context = {
+        'hodnosti': hodnosti
+    }
+    return render(request, 'ranks.html', context=context)
 
 

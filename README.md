@@ -49,3 +49,8 @@ verze 1.0
 - opraveny obrázky
 - responzivní
 - chybí kivy
+
+verze 1.0.1
+- přidání hodností jako samostatné databáze
+- přidání obrázků
+
