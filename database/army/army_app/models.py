@@ -1,5 +1,7 @@
 from django.db import models
 
+def img_path(instance, filename):
+    return "images/" + filename
 
 class Solider(models.Model):
     name = models.CharField(max_length=50, help_text="Zadej jmeno vojaka.", null=False)
@@ -23,6 +25,7 @@ class Gun(models.Model):
     active_range = models.IntegerField(help_text="Zadej aktivni dostrel.", null=False, default='200')
     max_range = models.IntegerField(help_text="Zadej maximalni dostrel.", null=False, default='1000')
     fire_rate = models.IntegerField(help_text="Zadejte kadenci zbrane.", null=False, default='300')
+    image = models.ImageField(help_text="vlož obrázek", upload_to=img_path, blank=True, null=True, verbose_name="Fotka")
 
     class Meta:
         ordering = ["name"]
