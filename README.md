@@ -31,6 +31,7 @@ verze 0.6
 - opraveno: výpis databáze
 - přidáno: stránka s prapory a zbraněmi
 - funguje počet + počet aktivích vojáků
+- opraveno /admin
 
 verze 0.7 
 - databáze funguje
