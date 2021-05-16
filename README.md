@@ -38,3 +38,8 @@ verze 0.7
 - přidáno více objektů do databáze
 - zprovoznění stránek o zbraních a praporech
 - obrázky ještě nefungují, ale jsou přidánys
+
+verze 0.8
+- upravení modelů (Solider, Gun)
+- úprava stránek na zobrazení modelů
+- nefungují obrázky ke zbraním
