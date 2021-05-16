@@ -12,26 +12,16 @@
         <div class="card">
             <div class="card-body row align-items-center">
                 <div class="col-lg-7 col-12">
-                    <h5 class="card-title">{{ hodnost.name }}</h5>
+                    <h6 class="card-title">{{ hodnost.name }}</h6>
                     <p class="card-text">{{ hodnost.tree }}</p>
                 </div>
                 <div class="col-lg-5 col-12 text-center">
                     <img src="{{ hodnost.image }}" width="100%" height="auto" alt="{{ zbran.name }}" >
                 </div>
-                <!--onload="vlajka_chooser(1)"-->
             </div>
         </div>
     </div>
     {% endfor %}
 </div>
 
-<script>
-    function vlajka_chooser(i){
-        if (i=1){
-            document.getElementById('image_gun').src = "../images/ak47.jpg";
-            document.getElementById('image_gun').alt = "ak55";
-        }
-    }
-
-</script>
 {% endblock %}
