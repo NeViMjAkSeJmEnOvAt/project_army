@@ -43,3 +43,9 @@ verze 0.8
 - upravení modelů (Solider, Gun)
 - úprava stránek na zobrazení modelů
 - nefungují obrázky ke zbraním
+
+verze 1.0
+- databze funguje jak má
+- opraveny obrázky
+- responzivní
+- chybí kivy
