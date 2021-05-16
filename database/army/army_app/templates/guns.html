@@ -8,22 +8,36 @@
 </div>
 <div class="row  mb-3">
     {% for zbran in zbrane%}
-    <div class="col-sm-4     mb-2" >
+    <div class="col-sm-4 mb-2" >
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">{{ zbran.name }}</h4>
-                <p class="card-text"><strong>Pocet Naboju:</strong> {{ zbran.ammo }} mm</p>
-                <p class="card-text"><strong>Typ naboje:</strong> {{ zbran.ammo_type }}</p>
-                <p class="card-text" onload="vlajka_chooser(1)"><img id="image_gun" src="#" alt="unknown"></p>
+                <p class="card-text"><strong>Pocet munice:</strong> {{ zbran.ammo }}</p>
+                <p class="card-text"><strong>Typ naboje:</strong> {{ zbran.ammo_type }} mm</p>
+                <p class="card-text"><strong>Kadence:</strong> {{ zbran.fire_rate }} ran/sekundu</p>
+                <p class="card-text"><strong>Aktivní dostřel:</strong> {{ zbran.active_range }} m</p>
+                <p class="card-text"><strong>Maximální dostřel:</strong> {{ zbran.max_range }} m</p>
+                <p class="card-text"><img id="image_gun" src="../images/ak47.jpg" alt="unknown"></p>
+                <!--onload="vlajka_chooser(1)"-->
             </div>
         </div>
     </div>
     {% endfor %}
 </div>
 <div class="row">
-    <div class="col-sm-10 ">
-        <strong>Počet používaných zbraní:</strong> {{ zbrane_pocet }}
+    <div class="col-sm-10 mb-4">
+        <strong>Celkový počet používaných zbraní:</strong> {{ zbrane_pocet }}
     </div>
+    <div class="col-sm-10 ">
+        <p>Počet používaných zbraní s municí typu 7.62 mm: <b>{{ naboje_762 }}</b></p>
+    </div>
+    <div class="col-sm-10 ">
+        <p>Počet používaných zbraní s municí typu 5.56 mm: <b>{{ naboje_556 }}</b></p>
+    </div>
+    <div class="col-sm-10 ">
+        <p>Počet používaných zbraní s municí typu 9 mm: <b>{{ naboje_9 }}</b></p>
+    </div>
+
 </div>
 
 <script>

@@ -6,7 +6,7 @@ def index(request):
 
     pocet_vojaku = Solider.objects.all().count()
     vojaci = Solider.objects.order_by('-name')
-    pocet_aktivnich = Solider.objects.filter(activity = True).count()
+    pocet_aktivnich = Solider.objects.filter(activity=True).count()
 
     context = {
         'pocet_vojaku': pocet_vojaku,
@@ -19,10 +19,16 @@ def guns(request):
 
     zbrane = Gun.objects.order_by('-name')
     zbrane_pocet = Gun.objects.all().count()
+    naboje_762 = Gun.objects.filter(ammo_type="7.62").count()
+    naboje_556 = Gun.objects.filter(ammo_type="5.56").count()
+    naboje_9 = Gun.objects.filter(ammo_type="9").count()
 
     context = {
         'zbrane_pocet': zbrane_pocet,
-        'zbrane': zbrane
+        'zbrane': zbrane,
+        'naboje_762': naboje_762,
+        'naboje_556': naboje_556,
+        'naboje_9': naboje_9
     }
     return render(request, 'guns.html', context=context)
 
