@@ -51,6 +51,12 @@ verze 1.0
 - chybí kivy
 
 verze 1.0.1
-- přidání hodností jako samostatné databáze
+- přidání hodností jako samostatné části databáze
 - přidání obrázků
+
+verze 1.1
+- přidání nábojů jako samostatné části databáze
+- grafické úpravy
+- nefunguje "více invofrmací"
+- upravení "Solider" a "Gun"
 
