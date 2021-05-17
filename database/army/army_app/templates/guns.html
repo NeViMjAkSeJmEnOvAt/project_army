@@ -13,16 +13,14 @@
             <div class="card-body row align-items-center">
                 <div class="col-lg-5 col-12">
                     <h4 class="card-title">{{ zbran.name }}</h4>
-                    <p class="card-text"><strong>Pocet munice:</strong> {{ zbran.ammo }}</p>
-                    <p class="card-text"><strong>Typ naboje:</strong> {{ zbran.ammo_type }} mm</p>
+                    <p class="card-text"><strong>Počet munice:</strong> {{ zbran.ammo }}</p>
+                    <p class="card-text"><strong>Typ náboje:</strong> {{ zbran.ammo_type }}</p>
                     <p class="card-text"><strong>Kadence:</strong> {{ zbran.fire_rate }} ran/sekundu</p>
                     <p class="card-text"><strong>Aktivní dostřel:</strong> {{ zbran.active_range }} m</p>
-                    <p class="card-text"><strong>Maximální dostřel:</strong> {{ zbran.max_range }} m</p>
                 </div>
                 <div class="col-lg-6 col-12 text-center">
                     <img src="{{ zbran.image }}" width="75%" height="auto" alt="{{ zbran.name }}" >
                 </div>
-                <!--onload="vlajka_chooser(1)"-->
             </div>
         </div>
     </div>
@@ -44,13 +42,4 @@
 
 </div>
 
-<script>
-    function vlajka_chooser(i){
-        if (i=1){
-            document.getElementById('image_gun').src = "../images/ak47.jpg";
-            document.getElementById('image_gun').alt = "ak55";
-        }
-    }
-
-</script>
 {% endblock %}

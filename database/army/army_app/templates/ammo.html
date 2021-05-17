@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .btnin{
+        color: black;
+        outline-color: black;
+    }
+    .btn:hover {
+        background: lightgrey;
+        color: black;
+    }
+</style>
+<div class="row mb-3 bg-secondary p-3">
+    <div class="col-sm-12">
+        <h2 class="text-center">Ukázka používaných nábojů</h2>
+    </div>
+</div>
+<div class="row  mb-3">
+    {% for naboj in naboje%}
+    <div class="col-sm-6 mb-2" >
+        <div class="card">
+            <div class="card-body row align-items-center">
+                <div class="col-lg-6 col-12">
+                    <h4 id="op" class="card-title">{{ naboj.name }}</h4>
+                    <p class="card-text"><strong>Váha náboje:</strong> {{ naboj.weight }} gramů</p>
+                    <p class="card-text"><strong>Délka celého náboje:</strong> {{ naboj.bullet_lenght }} mm</p>
+                    <p class="card-text"><strong>Průmer kulky:</strong> {{ naboj.bullet_diameter }} mm</p>
+                    <button onclick="epic( naboj.name )" class="btn"><a id="butn" href="#" class="btnin">Více informací</a></button>
+                </div>
+                <div class="col-lg-6 col-12 text-center">
+                    <img src="{{ naboj.image }}" width="85%" height="auto" alt="{{ naboj.name }}" >
+                </div>
+            </div>
+        </div>
+        <script>
+            function epic(jmeno){
+                if(jmeno = '40 mm'){
+                    document.getElementById("butn").href = ("{% url 'a1' %}");
+                }
+                else if(jmeno = '7,62 x 51mm NATO'){
+                    document.getElementById("butn").href = ("{% url 'a2' %}");
+                }
+                else if(jmeno = '5,56 x 45 mm NATO'){
+                    document.getElementById("butn").href = ("{% url 'a3' %}");
+                }
+                else if(jmeno = '5,7 x 28mm'){
+                    document.getElementById("butn").href = ("{% url 'a4' %}");
+                }
+                else if(jmeno = '9mm Luger'){
+                    document.getElementById("butn").href = ("{% url 'a5' %}");
+                }
+
+
+
+            }
+    </script>
+    </div>
+
+    {% endfor %}
+</div>
+
+{% endblock %}
