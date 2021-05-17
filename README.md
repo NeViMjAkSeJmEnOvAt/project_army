@@ -60,3 +60,9 @@ verze 1.1
 - nefunguje "více invofrmací"
 - upravení "Solider" a "Gun"
 
+verze 1.2
+- dokončení stránky s náboji
+- více informací funguje (i všechny stránky o nábojích)
+- upravení databáze zbraní
+
+
