@@ -15,6 +15,20 @@ def index(request):
     }
     return render(request, 'index.html', context=context)
 
+
+def soliders(request):
+
+    pocet_vojaku = Solider.objects.all().count()
+    vojaci = Solider.objects.order_by('-name')
+    pocet_aktivnich = Solider.objects.filter(activity=True).count()
+
+    context = {
+        'pocet_vojaku': pocet_vojaku,
+        'vojaci': vojaci,
+        'pocet_aktivnich': pocet_aktivnich
+    }
+    return render(request, 'soliders.html', context=context)
+
 def guns(request):
 
     zbrane = Gun.objects.order_by('-name')

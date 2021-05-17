@@ -51,6 +51,7 @@ class Gun(models.Model):
     active_range = models.IntegerField(help_text="Zadej aktivni dostrel.", null=False, default='200')
     max_range = models.IntegerField(help_text="Zadej maximalni dostrel.", null=False, default='1000')
     fire_rate = models.IntegerField(help_text="Zadejte kadenci zbrane.", null=False, default='300')
+    country = models.CharField(max_length=(50), help_text="Zadejte misto vyroby.", null=False, default='none')
 
     image = models.ImageField(help_text="vlož obrázek", upload_to=img_path, blank=True, null=True, verbose_name="Fotka")
 
