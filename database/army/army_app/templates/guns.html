@@ -19,7 +19,7 @@
                     <p class="card-text"><strong>Aktivní dostřel:</strong> {{ zbran.active_range }} m</p>
                     <p class="card-text"><strong>Země původu:</strong> {{ zbran.country }}</p>
                 </div>
-                <div class="col-lg-6 col-12 text-center">
+                <div class="col-lg-7 col-12 text-center">
                     <img src="{{ zbran.image }}" width="60%" height="auto" alt="{{ zbran.name }}" >
                 </div>
             </div>
@@ -31,16 +31,6 @@
     <div class="col-sm-10 mb-4">
         <strong>Celkový počet používaných zbraní:</strong> {{ zbrane_pocet }}
     </div>
-    <div class="col-sm-10 ">
-        <p>Počet používaných zbraní s municí typu 7.62 mm: <b>{{ naboje_762 }}</b></p>
-    </div>
-    <div class="col-sm-10 ">
-        <p>Počet používaných zbraní s municí typu 5.56 mm: <b>{{ naboje_556 }}</b></p>
-    </div>
-    <div class="col-sm-10 ">
-        <p>Počet používaných zbraní s municí typu 9 mm: <b>{{ naboje_9 }}</b></p>
-    </div>
-
 </div>
 
 {% endblock %}

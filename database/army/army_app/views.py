@@ -19,12 +19,14 @@ def index(request):
 def soliders(request):
 
     pocet_vojaku = Solider.objects.all().count()
-    vojaci = Solider.objects.order_by('-name')
+    vojaci = Solider.objects.order_by('name')
+    vojaci_odkonce = Solider.objects.order_by('-name')
     pocet_aktivnich = Solider.objects.filter(activity=True).count()
 
     context = {
         'pocet_vojaku': pocet_vojaku,
         'vojaci': vojaci,
+        'vojaci_odkonce': vojaci_odkonce,
         'pocet_aktivnich': pocet_aktivnich
     }
     return render(request, 'soliders.html', context=context)
@@ -33,16 +35,10 @@ def guns(request):
 
     zbrane = Gun.objects.order_by('-name')
     zbrane_pocet = Gun.objects.all().count()
-    #naboje_762 = Gun.objects.filter(ammo_type="7,62").count()
-    #naboje_556 = Gun.objects.filter(ammo_type="5,56").count()
-    #naboje_9 = Gun.objects.filter(ammo_type="9").count()
 
     context = {
         'zbrane_pocet': zbrane_pocet,
         'zbrane': zbrane,
-        #'naboje_762': naboje_762,
-        #'naboje_556': naboje_556,
-        #'naboje_9': naboje_9
     }
     return render(request, 'guns.html', context=context)
 
@@ -126,3 +122,13 @@ def a5(request):
         'naboje': naboje
     }
     return render(request, 'ammo_sites/luger9.html', context=context)
+
+
+def a6(request):
+
+    naboje = Ammo.objects.filter(name="7,62 x 39mm")
+
+    context = {
+        'naboje': naboje
+    }
+    return render(request, 'ammo_sites/76239.html', context=context)
