@@ -5,26 +5,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    {% block style %}
+        <style>
+            .odstupBarva{
+                margin-left: 1%;
+                color: lightgrey;
+            }
+        </style>
+    {% endblock %}
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
     <header class="p-4 text-center bg-dark">
         <h1 class="text-white text-uppercase display-3">Osobní vojenská databáze</h1>
     </header>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
-
-        <ul class="navbar-nav">
-            <li class="nav-item btn-dark rounded" style="margin-left: 1%">
+        <ul class="navbar-nav col-lg-10 ">
+            <li class="nav-item btn-dark rounded odstupBarva">
             <a class="nav-link" href="{% url 'index' %}"style="color: lightgrey" >Home</a>
           </li>
-
-
-            <div class="dropdown" style="margin-left: 1%">
+            <div class="dropdown odstupBarva">
               <button class="btn btn-dark dropdown-toggle" style="color: lightgrey" type="button" data-toggle="dropdown">
                 Vojenská databáze
               </button>
@@ -34,7 +35,7 @@
               </div>
             </div>
 
-            <div class="dropdown" style="margin-left: 1%">
+            <div class="dropdown odstupBarva">
               <button class="btn btn-dark dropdown-toggle" style="color: lightgrey" type="button" data-toggle="dropdown">
                 Technika
               </button>
@@ -44,16 +45,23 @@
               </div>
             </div>
 
-            <li class="nav-item btn-dark rounded" style="margin-left: 1%">
-            <a class="nav-link" href="{% url 'ranks' %}" style="margin-left: 1%; color: lightgrey">Hodnosti</a>
+            <li class="nav-item btn-dark rounded odstup">
+            <a class="nav-link odstupBarva" href="{% url 'ranks' %}">Hodnosti</a>
           </li>
 
-            <li class="nav-item btn-dark rounded" style="margin-left: 1%">
-            <a class="nav-link" href="http://127.0.0.1:8000/admin" style="margin-left: 1%; color: lightgrey">Admin</a>
+            <li class="nav-item btn-dark rounded odstup">
+            <a class="nav-link odstupBarva" href="http://127.0.0.1:8000/admin">Admin</a>
           </li>
 
         </ul>
       </div>
+        <div class="col-lg-1">
+            <ul class="navbar-nav">
+                <li class="nav-item btn-dark rounded">
+                <a class="nav-link odstupBarva" href="#">Přihlášení</a>
+              </li>
+            </ul>
+        </div>
     </nav>
 <div class="container-fluid">
     {% block content %}{% endblock %}

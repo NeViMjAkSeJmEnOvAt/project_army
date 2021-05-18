@@ -1,7 +1,4 @@
 from django.db import models
-from sqlalchemy.ext.declarative import declarative_base
-
-Base = declarative_base()
 
 
 def img_path(instance, filename):
@@ -10,6 +7,7 @@ def img_path(instance, filename):
 
 def img_path_rank(instance, filename):
     return "images/rank/" + filename
+
 
 def img_path_ammo(instance, filename):
     return "images/ammo/" + filename
@@ -28,15 +26,16 @@ class Ammo(models.Model):
 
     image = models.ImageField(help_text="vlož obrázek náboje", upload_to=img_path_ammo, blank=True, null=True, verbose_name="Fotka")
     image_des = models.ImageField(help_text="vlož obrázek s popisem", upload_to=img_path_ammo, blank=True, null=True, verbose_name="Fotka popis")
+    short_text = models.TextField(help_text="Krátké info", null=False, default="Zbraň")
+    gun1 = models.TextField(help_text="používaná zbraň", null=False, default="Zbraň")
+    gun2 = models.TextField(help_text="používaná zbraň", null=False, default="Zbraň")
+    gun3 = models.TextField(help_text="používaná zbraň", null=False, default="Zbraň")
 
     class Meta:
         ordering = ["name"]
 
     def __str__(self):
         return self.name
-
-    def get_url(self):
-        return ("ammo/" + self.id)
 
 
 class Gun(models.Model):

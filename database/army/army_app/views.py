@@ -1,17 +1,13 @@
 from django.shortcuts import render
+from django.views.generic import ListView, DetailView
 from .models import Solider, Gun, Platoon, Ranks, Ammo
 
 
 def index(request):
-
-    pocet_vojaku = Solider.objects.all().count()
-    vojaci = Solider.objects.order_by('-name')
-    pocet_aktivnich = Solider.objects.filter(activity=True).count()
+    vojaci = Solider.objects.order_by('name')
 
     context = {
-        'pocet_vojaku': pocet_vojaku,
         'vojaci': vojaci,
-        'pocet_aktivnich': pocet_aktivnich
     }
     return render(request, 'index.html', context=context)
 
@@ -33,7 +29,7 @@ def soliders(request):
 
 def guns(request):
 
-    zbrane = Gun.objects.order_by('-name')
+    zbrane = Gun.objects.order_by('name')
     zbrane_pocet = Gun.objects.all().count()
 
     context = {
@@ -62,73 +58,14 @@ def ranks(request):
     }
     return render(request, 'ranks.html', context=context)
 
-def ammo(request):
 
-    naboje = Ammo.objects.order_by('-name')
-
-    context = {
-        'naboje': naboje
-    }
-    return render(request, 'ammo.html', context=context)
-
-# //////////////////////////////////////////////////////////////////////////////// #
+class AmmoListView(ListView):
+    model = Ammo
+    context_object_name = 'naboje'
+    template_name = 'ammo.html'
 
 
-def a1(request):
-
-    naboje = Ammo.objects.filter(name="40 mm")
-
-    context = {
-        'naboje': naboje
-    }
-    return render(request, 'ammo_sites/mm40.html', context=context)
-
-
-def a2(request):
-
-    naboje = Ammo.objects.filter(name="7,62 x 51mm NATO")
-
-    context = {
-        'naboje': naboje
-    }
-    return render(request, 'ammo_sites/nato762.html', context=context)
-
-
-def a3(request):
-
-    naboje = Ammo.objects.filter(name="5,56 x 45 mm NATO")
-
-    context = {
-        'naboje': naboje
-    }
-    return render(request, 'ammo_sites/nato556.html', context=context)
-
-
-def a4(request):
-
-    naboje = Ammo.objects.filter(name="5,7 x 28mm")
-
-    context = {
-        'naboje': naboje
-    }
-    return render(request, 'ammo_sites/ammo57.html', context=context)
-
-
-def a5(request):
-
-    naboje = Ammo.objects.filter(name="9mm Luger")
-
-    context = {
-        'naboje': naboje
-    }
-    return render(request, 'ammo_sites/luger9.html', context=context)
-
-
-def a6(request):
-
-    naboje = Ammo.objects.filter(name="7,62 x 39mm")
-
-    context = {
-        'naboje': naboje
-    }
-    return render(request, 'ammo_sites/76239.html', context=context)
+class AmmoDetailView(DetailView):
+    model = Ammo
+    context_object_name = 'naboj'
+    template_name = 'ammo_detail.html'

@@ -8,16 +8,15 @@
           </li>
     </div>
     <div class="col-sm-10">
-        <h2 class="text-center">Náboj typu 5,7 x 28mm</h2>
+        <h2 class="text-center">Náboj {{ naboj.name }} </h2>
     </div>
 </div>
 <div class="row mb-3">
-    {% for naboj in naboje%}
     <div class="col-sm-12 mb-5" >
         <div class="card">
             <div class="card-body row align-items-center">
-                <div class="col-lg-3     col-12">
-                    <h4 class="card-title">Náboj <strong>{{ naboj.name }}</strong></h4>
+                <div class="col-lg-3 col-12">
+                    <h4 class="card-title"><strong>náboj {{ naboj.name }}</strong></h4>
                     <p class="card-text"><strong>Váha náboje:</strong> {{ naboj.weight }} g</p>
                     <p class="card-text"><strong>Délka celého náboje:</strong> {{ naboj.bullet_lenght }} mm</p>
                     <p class="card-text"><strong>Průmer kulky:</strong> {{ naboj.bullet_diameter }} mm</p>
@@ -27,28 +26,26 @@
                     <p class="card-text"><strong>Hlavňová energie:</strong> {{ naboj.muzzle_energy  }} J (při výstřelu)</p>
                 </div>
                 <div class="col-lg-4 col-12 text-center">
-                    <img src="{{ naboj.image }}" width="80%" height="auto" alt="{{ naboj.name }}" >
+                    <img src="../../../army_app/{{ naboj.image }}" width="80%" height="auto" alt="{{ naboj.name }}" >
                 </div>
-                <div class="col-lg-4 col-12 text-center">
-                    <img src="{{ naboj.image_des }}" width="90%" height="auto" alt="{{ naboj.name }}" >
+                <div class="col-lg-4 col-12 text-center"> <!-- tento odkaz je zatím jenom prototyp potom se upraví -->
+                    <img src="../../../army_app/{{ naboj.image_des }}" width="90%" height="auto" alt="{{ naboj.name }}" >
                 </div>
             </div>
         </div>
         <div class="card mb-2">
             <div class="card-body row align-items-center">
                 <div class="col-lg-8 col-12">
-                    <p class="card-text">Náboj 5.7 ×28 mm není odvozen od žádného předchozího náboje, ale byl vyvinut zcela nově. Náboj vznikl současně se zbraní FN P90 v reakci na žádost NATO z roku 1989 o vývoj nové osobní obranné zbraně (PDW). Tato zbraň měla mít využívat náboj s lepšími vlastnostmi než 9 × 19 mm Parabellum. Nový náboj měl být především schopný probít běžnou balistickou ochranu.</p>
-                    <p class="card-text">Původní náboj představený v roce 1990 byl ss90. Používal 1,5 gramů vážící projektil s plastovým jádrem, který dosahoval rychlosti 850 m/s při výstřelu z P90. Novější náboj, který od roku 1993 nahradil předchozí se nazýval SS190. Podstatnou změnou bylo zkrácení celkové délky náboje o 2,7 mm a zvýšení hmotnosti projektilu na 2 gramy, vystřelený z P90 dosahoval rychlosti 715 m/s.</p>
+                    <p class="card-text">{{ naboj.short_text}}</p>
                 </div>
                 <div class="col-lg-4 col-12">
                     <p>Tento typ náboje se používa například u:</p>
-                    <p><strong>FN P90 (Project 90)</strong> - Belgie </p>
-                    <p><strong>FN Five-Seven</strong> - Belgie</p>
-                    <p><strong>AR-57</strong> - USA</p>
+                    <p><strong>{{ naboj.gun1}}</strong></p>
+                    <p><strong>{{ naboj.gun2}}</strong></p>
+                    <p><strong>{{ naboj.gun3}}</strong></p>
                 </div>
             </div>
     </div>
-        {% endfor %}
 </div>
 </div>
 
