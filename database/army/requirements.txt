@@ -8,11 +8,6 @@ docutils==0.17.1
 filelock==3.0.12
 greenlet==1.1.0
 idna==2.10
-Kivy==2.0.0
-kivy-deps.angle==0.3.0
-kivy-deps.glew==0.3.0
-kivy-deps.sdl2==0.3.1
-Kivy-Garden==0.1.4
 Pillow==8.2.0
 pipenv==2020.11.15
 Pygments==2.9.0
