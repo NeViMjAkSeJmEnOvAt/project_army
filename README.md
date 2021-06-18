@@ -65,4 +65,6 @@ verze 1.2
 - více informací funguje (i všechny stránky o nábojích)
 - upravení databáze zbraní
 
+verze 1.3
+- přidaná požnost přihlášení
 
