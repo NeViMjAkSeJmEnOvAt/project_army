@@ -55,11 +55,14 @@
 
         </ul>
       </div>
-        <div class="col-lg-1">
+        <div class="col-lg-2">
             <ul class="navbar-nav">
-                <li class="nav-item btn-dark rounded">
-                <a class="nav-link odstupBarva" href="{% url 'login' %}">Přihlášení</a>
-              </li>
+                {% if user.is_authenticated %}
+             <li class="nav-item"><a href="{% url 'index' %}" class="nav-link">Uživatel: {{ user.get_username }}</a></li>
+             <li class="nav-item"><a href="{% url 'logout'%}" class="nav-link">Odhlásit</a></li>
+           {% else %}
+             <li class="nav-item"><a href="{% url 'login'%}?=next{{request.path}} " class="nav-link">Přihlásit</a></li>
+           {% endif %}
             </ul>
         </div>
     </nav>

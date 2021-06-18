@@ -67,4 +67,6 @@ verze 1.2
 
 verze 1.3
 - přidaná požnost přihlášení
+- uživatel "admin" heslo "admin", 
+- může zobrazit upravení zátěžových testů v sekci vojáci 
 
