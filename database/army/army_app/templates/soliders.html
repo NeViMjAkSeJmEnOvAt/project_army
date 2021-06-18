@@ -35,7 +35,7 @@
                     <a id="{{ vojak.name }}s" class="dropdown-item disabled">Sedy lehy: {{ vojak.score_situp }} / min</a>
                     <a id="{{ vojak.name }}b" class="dropdown-item disabled">Běh: {{ vojak.score_run }}m / 12 min</a>
                       {% if user.is_authenticated %}
-                          <button id="demo" class="dropdown-item">Upravit údaje</button>
+                          <a class="dropdown-item" href="{% url 'edit' vojak.pk %}">Upravit údaje</a>
                       {% endif %}
               </div>
             </div>

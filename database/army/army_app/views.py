@@ -49,6 +49,7 @@ def platoons(request):
     }
     return render(request, 'platoons.html', context=context)
 
+
 def ranks(request):
 
     hodnosti = Ranks.objects.order_by('score')
@@ -69,3 +70,9 @@ class AmmoDetailView(DetailView):
     model = Ammo
     context_object_name = 'naboj'
     template_name = 'ammo_detail.html'
+
+
+class EditListView(DetailView):
+    model = Solider
+    context_object_name = 'vojak'
+    template_name = 'edit.html'
