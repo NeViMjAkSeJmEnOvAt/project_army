@@ -95,13 +95,12 @@ class Solider(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        """Metoda vrací URL stránky, na které se vypisují podrobné informace o filmu"""
         return reverse('soliders')
 
 
 class Platoon(models.Model):
     name = models.CharField(max_length=50, help_text="Zadej jmeno skupiny.", null=False)
-    leader = models.ForeignKey('Solider', on_delete=models.SET('Neurceno'), null=False)
+    leader = models.ForeignKey('Solider', on_delete=models.SET('1'), null=False)
     country = models.CharField(max_length=255, help_text="Zadejte misto nasazeni skupiny.", null=True, default='neurceno')
     specialization = models.CharField(max_length=255, help_text="Zadejte specializaci skupiny.", null=False, default='Zaloha')
 
@@ -110,5 +109,6 @@ class Platoon(models.Model):
 
     def __str__(self):
         return self.name
+
 
 

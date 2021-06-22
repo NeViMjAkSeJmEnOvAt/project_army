@@ -1,9 +1,9 @@
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, UpdateView
+from django.views.generic import ListView, DetailView, UpdateView, DeleteView, CreateView
 from .models import Solider, Gun, Platoon, Ranks, Ammo
-from .forms import EditSolider
-
+from .forms import *
+from django.urls import reverse_lazy
 
 def index(request):
     vojaci = Solider.objects.order_by('name')
@@ -80,3 +80,12 @@ class SoliderEdit(LoginRequiredMixin, UpdateView, PermissionRequiredMixin):
     form_class = EditSolider
     login_url = '/account/login'
     permission_required = 'army_app.change_solider'
+
+
+class SoliderDelete(LoginRequiredMixin, DeleteView, PermissionRequiredMixin):
+    model = Solider
+    success_url = reverse_lazy('soliders')
+    template_name = 'delete.html'
+    login_url = '/account/login'
+    permission_required = 'army_app.delete_solider'
+

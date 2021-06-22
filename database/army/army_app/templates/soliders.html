@@ -21,7 +21,7 @@
     <div class="col-sm-3 mb-2">
         <div class="card">
             <div class="card-body">
-                <h4 id='{{ vojak.name }}' class="card-title" style="">{{ vojak.name }}</h4>
+                <h4 id='{{ vojak.name }}' class="card-title">{{ vojak.name }}</h4>
                 <p class="card-text"><strong>Datum narezení:</strong> {{ vojak.date_of_birth }}</p>
                 <p class="card-text"><strong>Místo narození:</strong> {{ vojak.country }}</p>
                 <p class="card-text"><strong>Osobní zbraň:</strong> {{ vojak.weapon }}</p>
@@ -37,7 +37,12 @@
                       {% if user.is_authenticated %}
                           <a class="dropdown-item" href="{% url 'soliders-edit' vojak.pk %}">Upravit údaje</a>
                       {% endif %}
-              </div>
+                  </div>
+                    {% if user.is_authenticated %}
+                    <div>
+                        <a href="{% url 'soliders-delete' vojak.pk %}"> Odstranit vojáka</a>
+                    </div>
+                    {% endif %}
             </div>
             </div>
         </div>
