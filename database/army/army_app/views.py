@@ -78,7 +78,7 @@ class SoliderEdit(LoginRequiredMixin, UpdateView, PermissionRequiredMixin):
     model = Solider
     template_name = 'edit.html'
     form_class = EditSolider
-    login_url = '/account/login'
+    login_url = '/accounts/login'
     permission_required = 'army_app.change_solider'
 
 
@@ -86,7 +86,7 @@ class SoliderCreate(LoginRequiredMixin, CreateView, PermissionRequiredMixin):
     model = Solider
     fields = ['name', 'date_of_birth', 'score_run', 'score_pushup', 'score_situp', 'rank', 'weapon', 'activity', 'country']
     template_name = 'create.html'
-    login_url = '/account/login'
+    login_url = '/accounts/login'
     permission_required = 'army_app.create_solider'
 
 
@@ -94,6 +94,6 @@ class SoliderDelete(LoginRequiredMixin, DeleteView, PermissionRequiredMixin):
     model = Solider
     success_url = reverse_lazy('soliders')
     template_name = 'delete.html'
-    login_url = '/account/login'
+    login_url = '/accounts/login'
     permission_required = 'army_app.delete_solider'
 
