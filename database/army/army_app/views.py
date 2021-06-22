@@ -1,6 +1,8 @@
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, UpdateView
 from .models import Solider, Gun, Platoon, Ranks, Ammo
+from .forms import EditSolider
 
 
 def index(request):
@@ -72,7 +74,9 @@ class AmmoDetailView(DetailView):
     template_name = 'ammo_detail.html'
 
 
-class EditListView(DetailView):
+class SoliderEdit(LoginRequiredMixin, UpdateView, PermissionRequiredMixin):
     model = Solider
-    context_object_name = 'vojak'
     template_name = 'edit.html'
+    form_class = EditSolider
+    login_url = '/account/login'
+    permission_required = 'army_app.change_solider'

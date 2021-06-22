@@ -6,7 +6,7 @@ from .views import *
 urlpatterns = [
     path('', index, name='index'),
     path('soliders', soliders, name='soliders'),
-    path('edit/<int:pk>/', EditListView.as_view(), name='edit'),
+    path('soliders/<int:pk>/update/', SoliderEdit.as_view(), name='soliders-edit'),
     path('guns', guns, name='guns'),
     path('platoons', platoons, name='platoons'),
     path('ranks', ranks, name='ranks'),

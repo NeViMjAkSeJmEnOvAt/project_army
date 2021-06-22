@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 def img_path(instance, filename):
@@ -92,6 +93,10 @@ class Solider(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        """Metoda vrací URL stránky, na které se vypisují podrobné informace o filmu"""
+        return reverse('soliders')
 
 
 class Platoon(models.Model):
