@@ -8,7 +8,7 @@ class EditSolider(ModelForm):
         fields = ['score_run', 'score_pushup', 'score_situp']
 
 
-class ModelSolider(ModelForm):
+class CreateSolider(ModelForm):
     class Meta:
         model = Solider
         fields = '__all__'

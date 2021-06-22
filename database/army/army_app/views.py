@@ -82,6 +82,14 @@ class SoliderEdit(LoginRequiredMixin, UpdateView, PermissionRequiredMixin):
     permission_required = 'army_app.change_solider'
 
 
+class SoliderCreate(LoginRequiredMixin, CreateView, PermissionRequiredMixin):
+    model = Solider
+    fields = ['name', 'date_of_birth', 'score_run', 'score_pushup', 'score_situp', 'rank', 'weapon', 'activity', 'country']
+    template_name = 'create.html'
+    login_url = '/account/login'
+    permission_required = 'army_app.create_solider'
+
+
 class SoliderDelete(LoginRequiredMixin, DeleteView, PermissionRequiredMixin):
     model = Solider
     success_url = reverse_lazy('soliders')

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row mb-3 bg-secondary p-3">
+    <div class="col-sm-12">
+        <h2 class="text-center">Vytvoření zápisu nového vojáka</h2>
+    </div>
+</div>
+<div class="mb-3 col-lg-12 text-center">
+  <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table style="margin-left: 35%">
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Uložit" style="background: lightcoral">
+    <a href="{% url 'soliders' %}" >Zrušit</a>
+  </form>
+</div>
+{% endblock %}
